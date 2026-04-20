@@ -1,0 +1,10 @@
+{
+  "name": "mongo-docker",
+  "version": "1.0.0",
+  "scripts": {
+    "db:up": "docker-compose up -d",
+    "db:down": "docker-compose down",
+    "db:logs": "docker-compose logs -f",
+    "db:shell": "docker exec -it mongodb mongosh -u admin -p admin123"
+  }
+}
