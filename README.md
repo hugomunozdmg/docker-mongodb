@@ -3,16 +3,12 @@ para salir de la terminal docker -> exit
 
 
 para exportar base de datos-> 
-docker exec mongodb mongodump \
-  -u admin \
-  -p admin123 \
-  --authenticationDatabase admin \
-  --db test \
-  --archive=/tmp/backup.gz \
-  --gzip
+- export -> crea el archivo dentro del contenedor docker
+- export:save -> copia ese archivo a local
 
-  guardar archivo en local ->
-  docker cp mongodb:/tmp/backup.gz ./backup.gz
+para importar base de datos ->
+- import:copy -> copia el archivo que tengamos en local, al contenedor docker
+- import -> incluye el archivo que tenga en el contenedor a la base de datos
 
   eliminar imagen ->
   docker images

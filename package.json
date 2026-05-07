@@ -5,6 +5,10 @@
     "db:up": "docker-compose up -d",
     "db:down": "docker-compose down",
     "db:shell": "docker exec -it mongodb mongosh -u admin -p admin123",
-    "docker:shell": "docker exec -it mongodb bash"
+    "docker:shell": "docker exec -it mongodb bash",
+    "export": "docker exec mongodb mongodump -u admin -p admin123 --authenticationDatabase admin --db test --archive=/tmp/backup.gz --gzip",
+    "export:save": "docker cp mongodb:/tmp/backup.gz ./backup.gz",
+    "import:copy": "docker cp ./backup.gz mongodb:/tmp/backup.gz",
+    "import": "docker exec mongodb mongorestore -u admin -p admin123 --authenticationDatabase admin --db test --archive=/tmp/backup.gz --gzip --drop"
   }
 }
