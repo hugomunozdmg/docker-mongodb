@@ -13,3 +13,8 @@ para importar base de datos ->
   eliminar imagen ->
   docker images
   docker rmi abc123def4563
+
+
+
+para usar base de datos pokemon ->
+db.samples_pokemon.find()
