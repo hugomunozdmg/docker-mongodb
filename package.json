@@ -2,6 +2,7 @@
   "name": "mongo-docker",
   "version": "1.0.0",
   "scripts": {
+    "clean": "docker system prune -a --volumes",
     "db:up": "docker-compose up -d",
     "db:down": "docker-compose down",
     "db:shell": "docker exec -it mongodb mongosh -u admin -p admin123",
